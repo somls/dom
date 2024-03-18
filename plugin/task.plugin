@@ -1,3 +1,8 @@
+#!name=task
+#!desc=定时任务
+#!homepage=https://whatshub.top
+
+[Script]
 
 # Boxjs
 cron "10 * * * *" script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Delete_All.js, enable=false, tag=抹掉Boxjs全局备份
