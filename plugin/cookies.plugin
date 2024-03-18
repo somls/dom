@@ -1,4 +1,9 @@
-# 获取Cookie订阅
+#!name=获取Cookie
+#!desc=适用于Loon脚本获取Cookie
+#!author=somls
+#!homepage=https://github.com/Moli-X/Resources/raw/main/Loon/GetCookie.plugin
+#!icon=https://github.com/Moli-X/Resources/raw/main/Icon/Image/Cookie.png
+#!edit=https://github.com/somls/dom/edit/main/plugin/cookies.plugin
 
 [Script]
 # yangtingxiao （operation-api.jimistore.com）
