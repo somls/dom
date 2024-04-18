@@ -12,6 +12,13 @@ http-request ^https:\/\/operation-api\.jimistore\.com\/* script-path=https://raw
 http-request ^https?:\/\/osg-open\.sgcc\.com\.cn\/osg-open-p0001\/member\/c5\/f05 tag=网上国网获取 OpenID, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/95598/95598.js
 # 欧可林商城 mall.oclean.com
 http-request ^https:\/\/mall\.oclean\.com\/API\/VshopProcess\.ashx\?action=TaskHome&clientType=5&client=5&openId= script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Oclean/Oclean_mini.js
+# > 华住会签到:APP签到一次即可获取cookie(hweb-mbf.huazhu.com)
+http-request https:\/\/hweb-mbf\.huazhu\.com\/api\/signIn script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/hzh/hzh.js, timeout=10, tag=华住会获取签到Cookie, img-url=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/hzh.png
+# > 京东签到 链接:https://home.m.jd.com/myJd/newhome.action  或旧版:https://bean.m.jd.com/bean/signIndex.action (ms.jr.jd.com, me-api.jd.com)
+http-request ^https:\/\/(api\.m|me-api)\.jd\.com\/(client\.action\?functionId=signBean|user_new\/info\/GetJDUserInfoUnion\?) script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js, tag=京东获取cookie, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/jd.png
+http-request ^https:\/\/ms\.jr\.jd\.com\/gw\/generic\/hy\/h5\/m\/appSign\? script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js, tag=京东获取cookie,img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/jd.png
+# > 阿里云盘签到 打开APP获取Token 链接:https://auth.aliyundrive.com/v2/account/token  (auth.aliyundrive.com)
+http-request ^https:\/\/auth\.aliyundrive\.com\/v2\/account\/token script-path=https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/js/Mine/aDriveCheckIn/aDriveCheckIn.js, requires-body=true, timeout=10, enabled=true, tag=阿里网盘token获取, img-url=https://github.com/Moli-X/Resources/raw/main/Icon/Image/AL.png
 
 [MITM]
-hostname = operation-api.jimistore.com, osg-open.sgcc.com.cn, mall.oclean.com
+hostname = operation-api.jimistore.com, osg-open.sgcc.com.cn, mall.oclean.com, hweb-mbf.huazhu.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com, auth.aliyundrive.com
