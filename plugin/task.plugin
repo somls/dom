@@ -8,13 +8,13 @@
 # 哔哩哔哩万象：https://raw.githubusercontent.com/BiliUniverse/BoxJs/main/BiliBili.boxjs.json
 # 阿里云盘签到：https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/js/Mine/boxjs.json
 # Gist备份：https://github.com/dompling/Script/raw/master/dompling.boxjs.json
-
+[Script]
 cron "12 0 * * *" script-path=https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/js/Mine/aDriveCheckIn/aDriveCheckIn.js, tag=阿里网盘签到, img-url=https://raw.githubusercontent.com/Moli-X/Resources/main/Icon/Image/AL.png, enabled=false
 cron "10 0 * * *" script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/hzh/hzh.js, timeout=300, tag=华住会, img-url=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/picture/hzh.png, enable=false
 cron "0 7 * * *" script-path=https://raw.githubusercontent.com/Moli-X/Resources/main/Script/OilPrice.js, timeout=300, tag=今日油价, img-url=https://raw.githubusercontent.com/Moli-X/Resources/main/Icon/Image/OilPrice.png, enabled=false
 cron "35 7 * * *" script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/95598/95598.js, timeout=10, tag=网上国网, img-url=https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/83/d8/8a/83d88a92-5a4d-7a2f-118c-80d795e7a9f6/AppIcon-0-0-1x_U007emarketing-0-5-0-0-sRGB-85-220.png/144x144.png
 cron "3 8 * * *" script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Oclean/Oclean_mini.js, tag=欧可林商城, enable=true
-
+cron "10 9 * * *" script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js,timeout=300, tag=达美乐披萨, enable=true
 # >>>>>>>>>>>🆑缓存功能<<<<<<<<<<<<<<<<<
 # 清除服务
 cron "5 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/scripts/boxjs.revert.usercfgs.httpbackend.js, tag=𝑩𝒐𝒙𝑱𝒔 𝑪𝒍𝒆𝒂𝒓 𝑪𝒂𝒄𝒉𝒆, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lab.png, enabled=false
