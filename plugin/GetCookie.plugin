@@ -17,6 +17,8 @@ http-request ^https:\/\/(api\.m|me-api)\.jd\.com\/(client\.action\?functionId=si
 http-request ^https:\/\/ms\.jr\.jd\.com\/gw\/generic\/hy\/h5\/m\/appSign\? script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js, tag=京东获取cookie,img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/jd.png
 # > 阿里云盘签到 打开APP获取Token 链接:https://auth.aliyundrive.com/v2/account/token  (auth.aliyundrive.com)
 http-request ^https:\/\/auth\.aliyundrive\.com\/v2\/account\/token script-path=https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/js/Mine/aDriveCheckIn/aDriveCheckIn.js, requires-body=true, timeout=10, enabled=true, tag=阿里网盘token获取, img-url=https://github.com/Moli-X/Resources/raw/main/Icon/Image/AL.png
+# > 打开达乐美披萨公众号->优惠｜咨询->有奖游戏->手动完成一次游戏 game.dominos.com.cn
+http-request ^https:\/\/game\.dominos\.com\.cn\/.+\/game\/gameDone script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js,requires-body=true, timeout=10, tag=达美乐披萨获取token
 
 [MITM]
-hostname = osg-open.sgcc.com.cn, mall.oclean.com, hweb-mbf.huazhu.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com, auth.aliyundrive.com
+hostname = osg-open.sgcc.com.cn, mall.oclean.com, hweb-mbf.huazhu.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com, auth.aliyundrive.com, game.dominos.com.cn
