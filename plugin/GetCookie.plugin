@@ -6,8 +6,6 @@
 #!edit=https://github.com/somls/dom/edit/main/plugin/cookies.plugin
 
 [Script]
-# 天天挖矿 （operation-api.jimistore.com）
-http-request ^https:\/\/operation-api\.jimistore\.com\/* script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js, requires-body=true, tag=天天挖矿
 # 网上国网 (osg-open.sgcc.com.cn)
 http-request ^https?:\/\/osg-open\.sgcc\.com\.cn\/osg-open-p0001\/member\/c5\/f05 tag=网上国网获取 OpenID, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/95598/95598.js
 # 欧可林商城 mall.oclean.com
@@ -21,4 +19,4 @@ http-request ^https:\/\/ms\.jr\.jd\.com\/gw\/generic\/hy\/h5\/m\/appSign\? scrip
 http-request ^https:\/\/auth\.aliyundrive\.com\/v2\/account\/token script-path=https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/js/Mine/aDriveCheckIn/aDriveCheckIn.js, requires-body=true, timeout=10, enabled=true, tag=阿里网盘token获取, img-url=https://github.com/Moli-X/Resources/raw/main/Icon/Image/AL.png
 
 [MITM]
-hostname = operation-api.jimistore.com, osg-open.sgcc.com.cn, mall.oclean.com, hweb-mbf.huazhu.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com, auth.aliyundrive.com
+hostname = osg-open.sgcc.com.cn, mall.oclean.com, hweb-mbf.huazhu.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com, auth.aliyundrive.com
