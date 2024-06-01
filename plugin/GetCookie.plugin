@@ -36,7 +36,7 @@ http-request ^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mv
 http-request ^https:\/\/yunbusiness\.ccb\.com\/(clp_coupon|clp_service)\/txCtrl\?txcode=(A3341A038|autoLogin) tag=建行数据, script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/jhsh_checkIn.js,requires-body=1
 # > 晓晓优选
 # hostname = xxyx-client-api.xiaoxiaoyouxuan.com
-http-response ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my tag=晓晓优选, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js
+http-response ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js, requires-body=true, timeout=60, tag=晓晓优选
 
 [MITM]
 hostname = osg-open.sgcc.com.cn, mall.oclean.com, hweb-mbf.huazhu.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com, auth.aliyundrive.com, game.dominos.com.cn, mxsa.mxbc.net, developer.aliyun.com, www.feihevip.com, c.cfmoto.com, pos.meituan.com, gw2c-hw-open.longfor.com, yunbusiness.ccb.com, xxyx-client-api.xiaoxiaoyouxuan.com
