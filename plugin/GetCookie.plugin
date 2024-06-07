@@ -42,6 +42,8 @@ http-request https:\/\/blackhole\.m\.jd\.com\/getinfo tag=京东 WSKEY,script-pa
 http-request https:\/\/perf\.m\.jd\.com\/app_monitor\/v2\/getRule tag=京东 PIN,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/get_jd_wskey.js,requires-body=0
 # 微信支付有优惠 - 领金币 hostname = payapp.weixin.qq.com
 http-response https:\/\/payapp\.weixin\.qq\.com\/(coupon-center-user\/home\/login|coupon-center-award\/award\/detail) tag=微付金币²,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js,requires-body=1
+# 买菜币
+http-request ^https?:\/\/mall\.meituan\.com\/api\/c\/mallcoin\/checkIn\/queryTaskListInfoV.\? script-path=https://raw.githubusercontent.com/JoJoJotarou/myScript/master/script/meituan/mall.meituan.cookie.js, timeout=60, tag=美团买菜
 
 [MITM]
 hostname = osg-open.sgcc.com.cn, mall.oclean.com, hweb-mbf.huazhu.com, ms.jr.jd.com, me-api.jd.com, api.m.jd.com, auth.aliyundrive.com, game.dominos.com.cn, mxsa.mxbc.net, developer.aliyun.com, www.feihevip.com, c.cfmoto.com, pos.meituan.com, gw2c-hw-open.longfor.com, yunbusiness.ccb.com, xxyx-client-api.xiaoxiaoyouxuan.com
