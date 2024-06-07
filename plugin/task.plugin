@@ -22,6 +22,7 @@ cron "11 12 * * *" script-path=https://raw.githubusercontent.com/leiyiyan/resour
 cron "20 7,13 * * *" script-path=https://github.com/leiyiyan/resource/blob/main/script/aliyun_web/aliyun_web.js, timeout=600, tag=阿里云社区日常任务, enabled=false
 cron "17 8 * * *" script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/jhsh_checkIn.js,tag = 建行生活,enable=true
 cron "37 7 * * *" script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xxyx/xxyx_signin.js, tag=晓晓优选每日任务,enable=true
+cron "3 12 * * *" script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js,tag=微付金币,enable=true
 
 # >>>>>>>>>>>🆑缓存功能<<<<<<<<<<<<<<<<<
 # 清除服务
