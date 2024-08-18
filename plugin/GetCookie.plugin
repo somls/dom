@@ -39,6 +39,7 @@ http-request ^https?:\/\/gw2c\-hw\-open\.longfor\.com\/lmarketing\-task\-api\-mv
 http-response ^https:\/\/xxyx-client-api\.xiaoxiaoyouxuan\.com\/my script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cookie/get_cookie.js, requires-body=true, timeout=60, tag=晓晓优选
 # > 小蚕霸王餐 hostname = gw.xiaocantech.com
 ^https:\/\/gw\.xiaocantech\.com\/rpc url script-response-body https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw
+http-response ^https:\/\/gw\.xiaocantech\.com\/rpc script-path=https://gist.githubusercontent.com/Sliverkiss/250a02315f0a2c99f42da3b3573375c8/raw, requires-body=true, timeout=60, tag=小蚕霸王餐
 # 京东wskey  hostname = blackhole.m.jd.com, perf.m.jd.com
 http-request https:\/\/blackhole\.m\.jd\.com\/getinfo tag=京东 WSKEY,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/get_jd_wskey.js,requires-body=0
 http-request https:\/\/perf\.m\.jd\.com\/app_monitor\/v2\/getRule tag=京东 PIN,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/get_jd_wskey.js,requires-body=0
