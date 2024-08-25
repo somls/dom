@@ -1,19 +1,163 @@
 #!desc=解锁合集
-#!homepage=https://whatshub.top
-#!author=ddgksf2013
-#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/b612.png
-name: B612kaji
-desc: B612咔叽会员解锁
+#!homepage=https://github.com/somls/dom/edit/main/override/collections.stoverride
+#!author=somls
+#!icon=
+name: 解锁合集
+desc: 自用解锁合集
+#=============UserScript=============#
 http:
-  mitm:
-    - "user-kaji-api.b612kaji.com"
+  rewrite:
+    # 屏蔽提示更新
+    - ^https?:\/\/firestore\.googleapis\.com - reject-200
+    # 彩云天气去广告
+    - ^https?:\/\/ad\.(caiyunapp|cyapi)\.(cn|com) - reject
+    - ^http:\/\/adx\.sogaha\.cn\/sdk\/ad\/get - reject-200
+    # 酷我音乐_AdBlock
+    - ^https?:\/\/rich\.kuwo\.cn\/AdService\/kaiping\/.+ - reject
+    # 酷我音乐_AdBlock
+    - ^https?:\/\/.+\.kwcdn\.kuwo\.cn\/star\/upload\/.+ - reject
+    # 酷我音乐_AdBlock
+    - ^https?:\/\/mobilead\.kuwo\.cn\/EcomResourceServer\/Ad - reject
+    # 酷我听书_Blockad
+    - ^https?:\/\/audiobookpay\.kuwo\.cn/a\.p\?op=get_advertright - reject-dict
+    # 酷我听书_Blockad
+    - ^https?:\/\/omp-audiobookpay\.lrts\.me\/a\.p\?op=get_advertright - reject-dict
+    # 酷我音乐_添加已购音乐
+    - ^https?:\/\/.*\.kuwo\.cn\/music\.pay\?uid\=\d+ http://musicpay.kuwo.cn/music.pay?uid=2 302
+    # 蓝基因
+    - ^https?:\/\/tk\.lanjiyin\.com\.cn\/img - reject
+    # 云听开屏广告/浮窗
+    - ^https?:\/\/ytmsout\.radio\.cn\/publish\/recScreen\/getLoadPage - reject-200
+    # 靓机汇顶部滚屏
+    - ^https?:\/\/ljh\.dianxiaoman\.com\/ljh\/api\/home\/getHomeList - reject
+    # 墨迹天气横幅广告
+    - ^http?:\/\/oss4bpc\.moji\.com\/.\d+\/.\d+\/.\d+\/.+\.jpg - reject
+    # 牛津高阶词典-去除首页下方广告
+    - ^https:\/\/oxadmin\.cp\.com\.cn\/api\/(hot\/index|advertise\/banner) - reject-dict
+    # iScreen小组件-辅助解锁
+    - ^https?:\/\/pay\.kuso\.xyz\/pay\/pay-check - reject-200
+    # FT中文网AD
+    - ^https?:\/\/ftmailbox\.cn\/ad_impression\/.+ - reject-200
+    # 恋小语去广告
+    - ^http:\/\api\.love\.823123\.com\/facades\/ad_space\.index - reject-200
+    # 小白学习开屏广告
+    - ^https:\/\/api\.xbxxhz\.com\/big_data\/v\d\/home_pages - reject
+    # 看理想 开屏广告
+    - ^https:\/\/api\.vistopia\.com\.cn\/api\/v\d\/home\/advertisement - reject-dict
   script:
-    - match: https://user-kaji-api.b612kaji.com/v1/purchase/subscription/subscriber/status
-      name: B612kaji1
+    # api.Revenuecat.com-解锁合集
+    - match: ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
+      name: Reheji
       type: response
       require-body: true
       timeout: 10
+    # buy.itunes.apple.com-解锁合集
+    - match: ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$
+      name: iTunes
+      type: response
+      require-body: true
+      timeout: 10
+    # Notability
+    - match: https?:\/\/notability\.com\/(global|subscriptions)
+      name: Notability
+      type: response
+      require-body: true
+      timeout: 10
+    # 百度网盘，一刻相册
+    - match: ^https?:\/\/pan\.baidu\.com\/(youai\/(user\/.+\/getminfo|membership\/.+\/adswitch)|(rest\/.+\/membership\/user|act\/.+\/(bchannel|welfare)\/list|api\/usercfg))
+      name: 百度系列
+      type: response
+      require-body: true
+      timeout: 10
+    # 阿里云盘 净化/解锁SVIP
+    - match: ^https?:\/\/(api|member)\.(aliyundrive|alipan)\.com\/(.+\/(users|activity|user\/get)|((business|apps)\/.+\/users|adrive\/.+\/user))
+      name: 阿里云盘
+      type: response
+      require-body: true
+      timeout: 10
+    # 如期
+    - match: ^https?:\/\/www\.freshhome\.top
+      name: 如期
+      type: response
+      require-body: true
+      timeout: 10
+    # 薄荷健康
+    - match: ^https?:\/\/api\.boohee\.com\/app-interface\/.+\/user\/user_info
+      name: 薄荷健康
+      type: response
+      require-body: true
+      timeout: 10
+    # 菜谱大全，烘焙小屋，香哈菜谱
+    - match: ^https?:\/\/api.*\.xiangha\.com
+      name: 菜谱
+      type: response
+      require-body: true
+      timeout: 10
+    # 夸克
+    - match: ^https?:\/\/drive.*\.quark\.cn\/.+\/clouddrive\/(member.+|distribute\/detail.+|capacity\/growth\/info)
+      name: 夸克
+      type: response
+      require-body: true
+      timeout: 10
+    # 网易蜗牛读书
+    - match: ^https?:\/\/accounts\.agenda\.com\/users\/.*\/license
+      name: 网易蜗牛读书
+      type: response
+      require-body: true
+      timeout: 10
+    # Foodie/轻图/B612相机/甜盐相机
+    - match: ^https?:\/\/(purchase-.*-api|user-kaji-api)\.(yiruikecorp|b612kaji|tianyancam)\.com\/v\d\/purchase\/subscription\/subscriber\/status
+      name: 4gexj.response
+      type: response
+      require-body: true
+      timeout: 10
+
+  mitm:
+    - "api.revenuecat.com"
+    - "buy.itunes.apple.com"
+    - 'pan.baidu.com'
+    - '*.aliyundrive.com'
+    - '*.alipan.com'
+    - 'drive*.quark.cn'
+    - 'p.du.163.com'
+    - 'notability.com'
+    - 'purchase-*-api.*.com'
+    - 'user-kaji-api.b612kaji.com
+    - '*.xiangha.com'
+    - 'accounts.agenda.com'
+    - 'api.boohee.com'
+    - 'www.freshhome.top'
 script-providers:
-  B612kaji1:
-    url: https://github.com/deezertidal/private/raw/master/js-backup/Crack/612.js
+  4gexj.response:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/4gexj.js
+    interval: 86400
+  Notability:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/notability.js
+    interval: 86400
+  网易蜗牛读书:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/wywnds.js
+    interval: 86400
+  夸克:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/kuake.js
+    interval: 86400
+  菜谱:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/caipu.js
+    interval: 86400
+  薄荷健康:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bohejiankang.js
+    interval: 86400
+  如期:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/rq.js
+    interval: 86400
+  阿里云盘:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/alidrive.js
+    interval: 86400
+  百度系列:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/bdcloud.js
+    interval: 86400
+  iTunes:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js
+    interval: 86400
+  Reheji:
+    url: https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js
     interval: 86400
