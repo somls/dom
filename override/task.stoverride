@@ -1,6 +1,6 @@
 #!desc=定时任务
 #!homepage=https://github.com/somls/dom/edit/main/override/task.stoverride
-#!author=smols
+#!author= smols
 #!icon=
 name: 定时
 desc: 定时任务
