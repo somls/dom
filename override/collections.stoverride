@@ -29,6 +29,11 @@ http:
       type: response
       require-body: true
       timeout: 10
+    - match: ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$)
+      name: Reheji
+      type: request
+      require-body: false
+      timeout: 10
     # buy.itunes.apple.com-解锁合集
     - match: ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$
       name: iTunes
