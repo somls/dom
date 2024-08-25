@@ -2,22 +2,68 @@
 #!desc=适用于Loon的订阅合集
 #!author=somls
 #!homepage=https://github.com/somls/dom/raw/main/plugin/Collection.plugin
-#!icon=https://raw.githubusercontent.com/Moli-X/Resources/main/Icon/Image/PutApp.png
+#!icon=
 #!edit=https://github.com/somls/dom/edit/main/plugin/Collection.plugin
 
-
-# 以下脚本已单独配置:
-# ✅Sub-Store
-# 添加插件：https://raw.githubusercontent.com/Moli-X/Resources/main/Sub-Store/SubStore.plugin
-# ✅TikTok解锁 
-# 添加插件https://github.com/Moli-X/Resources/raw/main/Loon/TikTok.plugin
-# ✅Spotify歌词翻译
-# 添加插件https://github.com/Moli-X/Resources/raw/main/Loon/Spotify/Spotify.plugin
-# ✅配置增强跳过代理
-# 添加插件https://github.com/Moli-X/Resources/raw/main/Loon/General.plugin
+#=============UserScript=============#
+[URL Rewrite]
+# 屏蔽提示更新
+^https?:\/\/firestore\.googleapis\.com - reject-200
+# 彩云天气广告
+^https?:\/\/ad\.(caiyunapp|cyapi)\.(cn|com) - reject
+^http:\/\/adx\.sogaha\.cn\/sdk\/ad\/get - reject-200
+# 酷我音乐_AdBlock
+^https?:\/\/rich\.kuwo\.cn\/AdService\/kaiping\/.+ - reject
+# 酷我音乐_AdBlock
+^https?:\/\/.+\.kwcdn\.kuwo\.cn\/star\/upload\/.+ - reject
+# 酷我音乐_AdBlock
+^https?:\/\/mobilead\.kuwo\.cn\/EcomResourceServer\/Ad - reject
+# 酷我听书_Blockad
+https?:\/\/audiobookpay\.kuwo\.cn/a\.p\?op=get_advertright - reject-dict
+# 酷我听书_Blockad
+https?:\/\/omp-audiobookpay\.lrts\.me\/a\.p\?op=get_advertright - reject-dict
+# 酷我音乐_添加已购音乐
+^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?uid\=\d+ header http://musicpay.kuwo.cn/music.pay?uid=2
+# 云听开屏广告/浮窗
+^https?:\/\/ytmsout\.radio\.cn\/publish\/recScreen\/getLoadPage - reject-200
+# 靓机汇顶部滚屏
+^https?:\/\/ljh\.dianxiaoman\.com\/ljh\/api\/home\/getHomeList - reject
+# 墨迹天气横幅广告
+^http?:\/\/oss4bpc\.moji\.com\/.\d+\/.\d+\/.\d+\/.+\.jpg - reject
+# 牛津高阶词典-去除首页下方广告
+^https:\/\/oxadmin\.cp\.com\.cn\/api\/(hot\/index|advertise\/banner) - reject-dict
+# iScreen小组件-辅助解锁
+^https?:\/\/pay\.kuso\.xyz\/pay\/pay-check - reject-200
+# FT中文网AD
+^https?:\/\/ftmailbox\.cn\/ad_impression\/.+ - reject-200
+# 恋小语去广告
+^http:\/\api\.love\.823123\.com\/facades\/ad_space\.index - reject-200
+# 小白学习开屏广告
+^https:\/\/api\.xbxxhz\.com\/big_data\/v\d\/home_pages - reject
+# 看理想 开屏广告
+^https:\/\/api\.vistopia\.com\.cn\/api\/v\d\/home\/advertisement - reject-dict
 
 [Script]
+# Revenuecat解锁系列
+# hostname = api.revenuecat.com
+http-response ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, requires-body=true, tag=Revenuecat解锁系列
+http-request ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, requires-body=false, tag=Reheji
 
+#************************************#
+# iTunes解锁系列
+# hostname = buy.itunes.apple.com
+http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, tag=iTunes解锁系列
+
+#************************************#
+# 薄荷健康
+# hostname = api.boohee.com
+http-response ^https?:\/\/api\.boohee\.com\/app-interface\/.+\/user\/user_info script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bohejiankang.js, requires-body=true, tag=薄荷健康
+
+#************************************#
+# hostname = p.du.163.com
+http-response ^https?:\/\/p\.du\.163\.com\/gain\/readtime\/info script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/wywnds.js, requires-body=true, tag=网易蜗牛读书
+
+#************************************#
 # ✅BoxJs
 http-request ^https?:\/\/(.+\.)?boxjs\.(com|net) script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120, tag=BoxJs
 # ✅YouTube  *.googlevideo.com, youtubei.googleapis.com, https://github.com/Moli-X/Resources/raw/main/Loon/YouTube.plugin
@@ -46,4 +92,4 @@ http-response ^https:\/\/pay\.aqzscn\.cn\/api\/v1\/payments\/ script-path = http
 
 
 [MITM]
-hostname=boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net,api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, xn--ck8h.com, restore-access.indream.app,spclient.wg.spotify.com, testflight.apple.com,mp.weixin.qq.com,weixin110.qq.com,security.wechat.com, api.aliyundrive.com, member.aliyundrive.com, api.m.jd.com, pay.aqzscn.cn, 
+hostname=api.revenuecat.com, buy.itunes.apple.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, api.boohee.com, api.xiuxiu.meitu.com, h5.xiuxiu.meitu.com, xn--ck8h.com, restore-access.indream.app,spclient.wg.spotify.com, testflight.apple.com,mp.weixin.qq.com,weixin110.qq.com,security.wechat.com, api.aliyundrive.com, member.aliyundrive.com, api.m.jd.com, pay.aqzscn.cn, p.du.163.com
