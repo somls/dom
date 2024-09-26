@@ -29,7 +29,5 @@ cron "5 0 * * *" script-path=https://raw.githubusercontent.com/chavyleung/script
 cron "5 0 * * *" script-path=https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/scripts/revert.js, tag=𝑺𝒖𝒃-𝑺𝒕𝒐𝒓𝒆  𝑪𝒍𝒆𝒂𝒓, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lab.png, enabled=false
 cron "5 0 * * *" script-path=https://raw.githubusercontent.com/unknowntokyo/surge-list/master/X/dns-clear-cache.js, tag=𝑫𝒏𝒔 𝑪𝒍𝒆𝒂𝒓 𝑪𝒂𝒄𝒉𝒆, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Lab.png, enabled=false
 # 同步
-cron "11 0 * * *" script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/cron-sync-artifacts.min.js, tag=Sub-Store标准版同步,img-url=https://raw.githubusercontent.com/Moli-X/Resources/main/Icon/Other/Sub-Store.png, enable=true
+cron "11 0 * * *" script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/cron-sync-artifacts.min.js, tag=Sub-Store标准版同步,img-url=https://raw.githubusercontent.com/Moli-X/Resources/main/Icon/Other/Sub-Store.png, enable=false
 cron "16 0 * * *" script-path=https://raw.githubusercontent.com/dompling/Script/master/gist/restore.js, timeout=10, tag=Gist恢复, img-url=https://raw.githubusercontent.com/Moli-X/Resources/main/Icon/Image/Gist.png, enabled=false
-
-
